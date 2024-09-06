@@ -59,6 +59,7 @@ const generateFakeTransactions = async (numTransactions) => {
     return { message: `${numTransactions} fake transactions created successfully` };
 };
 
+// As of now this constant is not being used but the code is kept for future uses
 const getWeeklySalesReport = async (year, weekNumber) => {
     try {
         const startDate = startOfWeek(new Date(year, 0, 1), { weekStartsOn: 1 });
@@ -89,6 +90,7 @@ const getWeeklySalesReport = async (year, weekNumber) => {
     }
 };
 
+// As of now this constant is not being used but the code is kept for future uses
 const getMonthlySalesReport = async (year, month) => {
     try {
         const validMonth = Math.max(1, Math.min(12, parseInt(month, 10)));
