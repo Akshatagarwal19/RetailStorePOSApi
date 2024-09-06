@@ -21,8 +21,8 @@ router.delete('/:id', transactionController.deleteTransaction);
 // Generate an invoice for a transaction by ID
 router.get('/invoice/:id', transactionController.generateInvoice);
 
-// Genearate fake data
-// router.post('/generate-fake-transactions', transactionController.generateFakeTransactions);
+// Only Use this when generating fake transaction data
+router.post('/generate-fake-transactions', transactionController.generateFakeTransactions);
 
 router.get('/weekly/:year/:month/:week', transactionController.getWeeklyReportHandler);
 router.get('/monthly/:year/:month', transactionController.getMonthlyReportHandler);

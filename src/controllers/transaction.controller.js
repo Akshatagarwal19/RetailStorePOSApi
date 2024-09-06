@@ -325,6 +325,17 @@ const transactionController = {
         }
     },
 
+    generateFakeTransactions: async (req, res) => {
+        const numTransactions = req.body.numTransactions || 100; // Default to 100 if not specified
+        try {
+            const result = await generateFakeTransactions(numTransactions);
+            res.status(201).json(result);
+        } catch (error) {
+            console.error('Error generating fake transactions:', error);
+            res.status(500).json({ message: 'Error generating fake transactions', error });
+        }
+    },
+
     getWeeklyReportHandler: async (req, res) => {
         try {
             const { year, month, week } = req.params;
